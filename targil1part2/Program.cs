@@ -26,7 +26,7 @@ namespace targil1part2
                 //var numList = new string[5];
                 // numList = readLine.Split();
                 //added this
-                //ok now another change
+                //ok now another change another comment
                 for (var j = 0; j < 5; j++)
                 {
                     numbers[i, j] = Convert.ToInt32(numArray[i * 5 + j]);
