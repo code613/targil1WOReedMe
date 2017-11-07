@@ -32,6 +32,7 @@ namespace targil1part2
                     numbers[i, j] = Convert.ToInt32(numArray[i * 5 + j]);
                 }
             }
+            Console.WriteLine("hello ben");
             //string[] numArray = theNumbers.Split(new char[] { ' ', '\n', ',' });
             //int[] myInts = Array.ConvertAll(numArray,Int32,);
             ////ok now adding this to change the document
