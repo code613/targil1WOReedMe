@@ -11,14 +11,12 @@ namespace targil1part2
         static void Main(string[] args)
         {
             Console.WriteLine("enter 5 sets of 5 numbers");
-            int[,] grid = new int[5, 5];
-            string theNumbers = (Console.ReadLine());
-            string[] numArray = theNumbers.Split(new char[] { ' ', '\n', ',' });
-            int[] myInts = Array.ConvertAll(numArray,Int32,);
-            int maxg = Convert.ToInt16(numArray[0]);
-            int ming = Convert.ToInt16(numArray[1]);
-            Console.WriteLine("enter 5 sets of 5 numbers");
             int[,] numbers = new int[5, 5];
+            string theNumbers = (Console.ReadLine());
+            string[] tokens = theNumbers.Split(new char[] { ' ', '\n', ',' });
+            int[] myInts = Array.ConvertAll(tokens, int.Parse);
+            Console.WriteLine("enter 5 sets of 5 numbers");
+            
             string theNumbers = (Console.ReadLine());
             string[] numArray = theNumbers.Split(new char[] { ' ', '\n', ',' });
             for (var i = 0; i < 5; i++)
@@ -32,7 +30,7 @@ namespace targil1part2
                     numbers[i, j] = Convert.ToInt32(numArray[i * 5 + j]);
                 }
             }
-            Console.WriteLine("hello ben");
+            
             //string[] numArray = theNumbers.Split(new char[] { ' ', '\n', ',' });
             //int[] myInts = Array.ConvertAll(numArray,Int32,);
             ////ok now adding this to change the document
