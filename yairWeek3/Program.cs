@@ -10,7 +10,7 @@ namespace yairWeek3
     {
         static void Main(string[] args)
         {
-            public class thsd : IComparable
+           // public class thsd : IComparable
         }
     }
 }

@@ -23,7 +23,7 @@ namespace dotNet5776_01_8867_7245
             Array.Sort(numberArray);
             // Array numbers[100];//to random numbers
             //switch () { };
-            Console.WriteLine("enter 0 for gessNumber, 1 for gessArea,2 for exit ");
+            Console.WriteLine("enter 0 for gessNumber ,1 for gessArea ,2 for exit ");
             options c;
             do
             {
