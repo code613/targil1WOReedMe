@@ -40,27 +40,7 @@ namespace dotNet5776_01_8867_7245
                             Console.WriteLine("not found");
                         break;
                     case options.gessArea:
-                        Console.WriteLine("enter a range of numbers and from 1 to 1000");
-                        Console.WriteLine("and then another number that gesses how manny are found");
-                        string theNumbers = (Console.ReadLine());
-                        string[] tokens = theNumbers.Split(new char[] { ' ', '\n', ',' });
-                        int[] myInts = Array.ConvertAll(tokens, int.Parse);
-                        int maxg = myInts[0];
-                        int ming = myInts[1];
-                        if (maxg < ming) { int temp = maxg; maxg = ming; ming = temp; }
-                        int gess = myInts[2];
-                        int counter = 0;
-                        for (int i = 0; i < numberArray.Length; i++)
-                        {
-                            if (numberArray[i] > ming && numberArray[i] < maxg)
-                            {
-                                counter++;
-                            }
-                        }
-                        if (counter == gess)
-                            Console.WriteLine("good gess");
-                        else
-                            Console.WriteLine("wrong");
+                        gessAreaMethod(numberArray);//to make simpiler
                         break;
                     case options.exit:
                         Console.WriteLine("bye");
@@ -76,6 +56,30 @@ namespace dotNet5776_01_8867_7245
 
         }
 
+        private static void gessAreaMethod(int[] numberArray)
+        {
+            Console.WriteLine("enter a range of numbers and from 1 to 1000");
+            Console.WriteLine("and then another number that gesses how manny are found");
+            string theNumbers = (Console.ReadLine());
+            string[] tokens = theNumbers.Split(new char[] { ' ', '\n', ',' });
+            int[] myInts = Array.ConvertAll(tokens, int.Parse);
+            int maxg = myInts[0];
+            int ming = myInts[1];
+            if (maxg < ming) { int temp = maxg; maxg = ming; ming = temp; }
+            int gess = myInts[2];
+            int counter = 0;
+            for (int i = 0; i < numberArray.Length; i++)
+            {
+                if (numberArray[i] > ming && numberArray[i] < maxg)
+                {
+                    counter++;
+                }
+            }
+            if (counter == gess)
+                Console.WriteLine("good gess");
+            else
+                Console.WriteLine("wrong");
+        }
     }
 }
 
