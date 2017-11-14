@@ -8,14 +8,17 @@ namespace targil2
 {
     enum Royal { jack = 11, queen, king, ace };
     enum E_Color { red, black };
-    class Card
+
+    class Card : IComparable<Card>
     {
         private E_Color color;
         private int number;
-        //#region
-        card(E_Color col, int t) {
 
-        };
+        public Card(E_Color col, int num)
+        {
+            color = col;
+            number = num; 
+        }
         internal E_Color Color
         {
             get
@@ -66,42 +69,10 @@ namespace targil2
                 return c.ToString();
             }
         }
-        Card(E_Color col,int num)
+
+        public int CompareTo(Card other)
         {
-            color = col;
-            number = num;
+            return number.CompareTo(other.number);
         }
-       
-    }
-}
-enum Royel { j,q,k,a };
-    enum E_Color { black, red };
-    class card
-    {
-        private
-        E_Color color;
-        int number;
-
-        public string  Number
-        {
-            get
-            {
-                return ToString((Royel)number);
-            }
-        }
-
-        internal E_Color Color
-        {
-            get
-            {
-                return color;
-            }
-
-            set
-            {
-                color = value;
-            }
-        }
-
     }
 }
