@@ -13,6 +13,9 @@ namespace targil2
         private E_Color color;
         private int number;
         //#region
+        card(E_Color col, int t) {
+
+        };
         internal E_Color Color
         {
             get
@@ -43,7 +46,15 @@ namespace targil2
                 number = value;
             }
         }
-
+        public override string ToString()
+        {
+            if (number < 11)
+                return "card: " + color + " " + number;
+            else
+            {
+            return "card: " + color + " " + (Royal)number;   
+            }
+        }
         public string cardName()
         {
 
@@ -63,9 +74,34 @@ namespace targil2
        
     }
 }
-                
- 
-        
+enum Royel { j,q,k,a };
+    enum E_Color { black, red };
+    class card
+    {
+        private
+        E_Color color;
+        int number;
 
-           
+        public string  Number
+        {
+            get
+            {
+                return ToString((Royel)number);
+            }
+        }
 
+        internal E_Color Color
+        {
+            get
+            {
+                return color;
+            }
+
+            set
+            {
+                color = value;
+            }
+        }
+
+    }
+}
