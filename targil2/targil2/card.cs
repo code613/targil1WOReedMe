@@ -8,7 +8,7 @@ namespace targil2
 {
     enum Royal { jack = 11, queen, king, ace };
     enum E_Color { red, black };
-    class card
+    class Card
     {
         private E_Color color;
         private int number;
@@ -54,8 +54,13 @@ namespace targil2
                 Royal c = (Royal)number;
                 return c.ToString();
             }
-
         }
+        Card(E_Color col,int num)
+        {
+            color = col;
+            number = num;
+        }
+       
     }
 }
                 
