@@ -24,5 +24,19 @@ namespace targil2
                 }
             }
         }
+        
+        public void mixCards()
+        {
+            Random rand = new Random();
+            int size = Cards.Count;
+            for (int first = 0; first < size; first++)
+            {
+                int second = rand.Next(size);
+                Card tmp = Cards[first];
+                Cards[first] = Cards[second];
+                Cards[second] = tmp;
+            }
+
+        }
     }
 }
