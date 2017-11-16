@@ -41,7 +41,7 @@ namespace targil1part2
             else
                 Console.WriteLine("not a magic Squere");
             Console.ReadKey();
-            //Console.ReadLine();
+            
         }
         static bool magicSquere(int[,]a,int size)
         {
