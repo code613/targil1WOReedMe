@@ -1,6 +1,6 @@
 ﻿//zeev kaminsky 312297245
-//beny marcus 
-
+//beny marcus 305568867
+//exersize 1 
 using System;
 using System.Collections.Generic;
 using System.Linq;
