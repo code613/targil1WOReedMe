@@ -1,10 +1,13 @@
-﻿using System;
+﻿//zeev kaminsky 312297245
+//beny marcus 
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public enum options { gessNumber,gessArea,exit};
+public enum options { guessNumber,guessArea,exit};
 
 namespace dotNet5776_01_8867_7245
 {
@@ -31,7 +34,7 @@ namespace dotNet5776_01_8867_7245
                 c = (options)number;
                 switch (c)
                 {
-                    case options.gessNumber:
+                    case options.guessNumber:
                         Console.WriteLine("enter a number from 1 to 1000");
                         int num = Convert.ToInt32(Console.ReadLine());
                         if (numberArray.Contains(num))
@@ -39,7 +42,7 @@ namespace dotNet5776_01_8867_7245
                         else
                             Console.WriteLine("not found");
                         break;
-                    case options.gessArea:
+                    case options.guessArea:
                         gessAreaMethod(numberArray);//to make simpiler
                         break;
                     case options.exit:
