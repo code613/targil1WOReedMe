@@ -9,11 +9,11 @@ namespace targil1part2
     class Program
     {
         static void Main(string[] args)
-        {//there is also too manny spases error
+        {
             char[] seperaters = new char[] { ' ', '\n', ',', '\t' };
             Console.WriteLine("enter 5 sets of 5 numbers");
             int[,] numbers = new int[5, 5];
-            //Console.WriteLine(numbers.Length);
+            
             Console.WriteLine("after 5 numbers press enter");
             for (int i = 0; i < 5; i++)
             {
