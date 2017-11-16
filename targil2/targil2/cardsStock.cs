@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace targil2
 {
-    
-    class CardStock
+
+    public class CardStock
     {
-        List <Card> Cards;
+        List<Card> Cards;
         CardStock()
         {
-            for (int i=0;i<26;i++)
+            for (int i = 0; i < 26; i++)
             {
-                if (i<13)
+                if (i < 13)
                 {
-                    Cards.Add(new Card( E_Color.black, i + 2));
+                    Cards.Add(new Card(E_Color.black, i + 2));
                 }
                 else
                 {
@@ -24,7 +24,7 @@ namespace targil2
                 }
             }
         }
-        
+
         public void mixCards()
         {
             Random rand = new Random();
@@ -38,5 +38,27 @@ namespace targil2
             }
 
         }
+        /// <summary>
+        /// return names&color of all cards;
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            string str = null;
+            for (int i = 0; i < Cards.Count; i++)
+            {
+                str += (Cards[i].ToString() + ", ");
+            }
+            return str;
+        }
+
+        public void distribute(params Player[] players)
+        {
+            foreach (Player p in players)
+            {
+
+            }
+        }
     }
+                    
 }

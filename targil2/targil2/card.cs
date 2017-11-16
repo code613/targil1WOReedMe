@@ -9,7 +9,7 @@ namespace targil2
     enum Royal { jack = 11, queen, king, ace };
     enum E_Color { red, black };
 
-    class Card : IComparable<Card>
+    public class Card : IComparable<Card>
     {
         private E_Color color;
         private int number;
