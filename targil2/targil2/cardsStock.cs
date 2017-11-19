@@ -54,10 +54,14 @@ namespace targil2
 
         public void distribute(params Player[] players)
         {
-            foreach (Player p in players)
-            {
+            //for (int i = 0; i < Cards.Count; i++)
+            // {
+            //   foreach (Player p in players)
+            //  {
 
-            }
+            //  }
+            //   }
+
         }
     }
                     

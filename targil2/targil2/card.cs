@@ -11,6 +11,7 @@ namespace targil2
 
     public class Card : IComparable<Card>
     {
+        
         private E_Color color;
         private int number;
 
