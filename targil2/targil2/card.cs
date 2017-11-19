@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace targil2
 {
-    enum Royal { jack = 11, queen, king, ace };
-    enum E_Color { red, black };
+    public enum Royal { jack = 11, queen, king, ace };
+    public enum E_Color { red, black };
 
     public class Card : IComparable<Card>
     {
