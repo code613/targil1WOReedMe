@@ -8,18 +8,21 @@ namespace targil2
 {
     class Game
     {
-        CardStock gameCards;
-        Player player1, player2;
-        public void startGame()
+        public CardStock gameCards = new CardStock();
+        public Player player1 = new Player();
+        public Player player2 = new Player();
+        public Game(string name1,string name2)
         {
+            player1.name = name1;
+            player2.name = name2;
             gameCards.mixCards();
-            gameCards.distribute();
+            gameCards.distribute(player1, player2);
         }
         public string printWinerName()
         {
             if (player1.lose())
-                return player2.name + "is the great winner";
-            return player1.name + "is the great winner";
+                return player2.name + " is the great winner";
+            return player1.name + " is the great winner";
 
         }
         public bool isEndGame()
@@ -30,27 +33,22 @@ namespace targil2
         }
         public void makeMove()
         {
-            Card player1Card = player1.playrCards.First();
-            Card player2Card = player2.playrCards.First();
-            player1.pop();
-            player2.pop();
-            if (player1Card.Number> player2Card.Number)
+            while (!isEndGame())
             {
-                player1.addCard(player1Card, player2Card);
+                Card player1Card = player1.playrCards.First();
+                Card player2Card = player2.playrCards.First();
+                player1.pop();
+                player2.pop();
+                if (player1Card.Number+10 > player2Card.Number)
+                {
+                    player1.addCard(player1Card, player2Card);
+                }
+                else
+                {
+                    player2.addCard(player1Card, player2Card);
+                }
             }
-            else if (player2Card.Number > player1Card.Number)
-            {
-                player2.addCard(player1Card, player2Card);
-            }
-            else
-            {
-
-            }
-            if (isEndGame())
-            {
-                Console.WriteLine(printWinerName());
-                return;
-            }
+            Console.WriteLine(printWinerName());
         }
     }
 }

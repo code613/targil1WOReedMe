@@ -9,8 +9,8 @@ namespace targil2
 
     public class CardStock
     {
-        List<Card> Cards;
-        CardStock()
+        public List<Card> Cards = new List<Card>();
+        public CardStock()
         {
             for (int i = 0; i < 26; i++)
             {
@@ -38,6 +38,8 @@ namespace targil2
             }
 
         }
+
+
         /// <summary>
         /// return names&color of all cards;
         /// </summary>
@@ -54,20 +56,32 @@ namespace targil2
 
         public void distribute(params Player[] players)
         {
-
-
-            foreach (Player p in players)
+            while (Cards.Count != 0)
             {
-                if (Cards.Count != 0)
+                foreach (Player p in players)
                 {
                     p.playrCards.Enqueue(Cards.First());
                     Cards.Remove(Cards.First());
                 }
-                else break;
             }
-            
-            
-            
+        }
+
+
+        public void sortCards()
+        {
+            Cards.Sort();
+        }
+
+
+        public void addCard(Card card1)
+        {
+            Cards.Add(card1);
+        }
+
+
+        public void removeCard(Card card1)
+        {
+            Cards.Remove(card1);
         }
     }
                     

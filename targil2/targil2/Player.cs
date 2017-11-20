@@ -9,7 +9,11 @@ namespace targil2
     public class Player
     {
         public string name;
-        public Queue <Card> playrCards;
+        public Queue<Card> playrCards = new Queue<Card>();
+
+        
+
+
         /// <summary>
         /// tostring return name ,sum of cards and what cards; 
         /// </summary>
@@ -23,6 +27,8 @@ namespace targil2
             }
             return name + playrCards.Count + str;
         }
+
+
         /// <summary>
         /// check if playr as no 
         /// cards and then he lose the game;
@@ -33,6 +39,8 @@ namespace targil2
             if (playrCards.Count == 0) return true;
             return false;
         }
+
+
         /// <summary>
         /// add cards to end of queue;
         /// </summary>
@@ -44,6 +52,8 @@ namespace targil2
                 playrCards.Enqueue(C);
             }
         }
+
+
         /// <summary>
         /// exit the first card;
         /// </summary>
