@@ -15,9 +15,14 @@ namespace targil2
         {
             player1.name = name1;
             player2.name = name2;
+           
+        }
+        public void startGame()
+        {
             gameCards.mixCards();
             gameCards.distribute(player1, player2);
         }
+
         public string printWinnerName()
         {
             if (player1.lose())

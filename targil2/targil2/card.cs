@@ -11,15 +11,15 @@ namespace targil2
 
     public class Card : IComparable<Card>
     {
-        
-        public E_Color color=new E_Color();
-        public int number;
+        private E_Color color=new E_Color();
+        private int number;
 
         public Card(E_Color col, int num)
         {
             color = col;
             number = num; 
         }
+        #region
         internal E_Color Color
         {
             get
@@ -49,6 +49,7 @@ namespace targil2
                 }
                 number = value;
             }
+            #endregion 
         }
         public override string ToString()
         {
