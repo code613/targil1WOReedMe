@@ -18,7 +18,7 @@ namespace targil2
             gameCards.mixCards();
             gameCards.distribute(player1, player2);
         }
-        public string printWinerName()
+        public string printWinnerName()
         {
             if (player1.lose())
                 return player2.name + " is the great winner";
@@ -35,20 +35,27 @@ namespace targil2
         {
             while (!isEndGame())
             {
-                Card player1Card = player1.playrCards.First();
-                Card player2Card = player2.playrCards.First();
-                player1.pop();
-                player2.pop();
-                if (player1Card.Number+10 > player2Card.Number)
+                Card firstCard = player1.pop();
+                Card secondCard = player2.pop();
+
+                if (firstCard.Number > secondCard.Number)
                 {
-                    player1.addCard(player1Card, player2Card);
+                    player1.addCard(firstCard, secondCard);
                 }
-                else
+                else if (secondCard.Number > firstCard.Number)
                 {
-                    player2.addCard(player1Card, player2Card);
+                    player2.addCard(firstCard, secondCard);
+                }
+                else       //case both cards are equal;need to fix;
+                {
+                    List<Card> war = new List<Card>();
+                    war.Add(player1.pop());
+                    war.Add(player1.pop());
+                    war.Add(player2.pop());
+                    war.Add(player2.pop());
                 }
             }
-            Console.WriteLine(printWinerName());
+            Console.WriteLine(printWinnerName());
         }
     }
 }

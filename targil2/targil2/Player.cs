@@ -9,7 +9,7 @@ namespace targil2
     public class Player
     {
         public string name;
-        public Queue<Card> playrCards = new Queue<Card>();
+        public Queue<Card> playerCards = new Queue<Card>();
 
         
 
@@ -21,11 +21,11 @@ namespace targil2
         public override string ToString()
         {
             string str=null;
-            foreach (Card C in playrCards)
+            foreach (Card C in playerCards)
             {
                 str += C;
             }
-            return name + playrCards.Count + str;
+            return name + playerCards.Count + str;
         }
 
 
@@ -36,7 +36,7 @@ namespace targil2
         /// <returns></returns>
         public bool lose()
         {
-            if (playrCards.Count == 0) return true;
+            if (playerCards.Count == 0) return true;
             return false;
         }
 
@@ -49,20 +49,19 @@ namespace targil2
         {
             foreach (Card C in listc)
             {
-                playrCards.Enqueue(C);
+                playerCards.Enqueue(C);
             }
         }
 
 
         /// <summary>
-        /// exit the first card;
+        ///return the first card && exit the first card;
         /// </summary>
-        public void pop()
+        public Card pop()
         {
-            playrCards.Dequeue();
+            Card tmp = playerCards.First();
+            playerCards.Dequeue();
+            return tmp;
         }
-    }
-
-   
-    
+    }    
 }

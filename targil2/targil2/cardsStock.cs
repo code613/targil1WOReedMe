@@ -60,7 +60,7 @@ namespace targil2
             {
                 foreach (Player p in players)
                 {
-                    p.playrCards.Enqueue(Cards.First());
+                    p.playerCards.Enqueue(Cards.First());
                     Cards.Remove(Cards.First());
                 }
             }
