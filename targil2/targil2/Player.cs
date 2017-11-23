@@ -30,7 +30,7 @@ namespace targil2
 
 
         /// <summary>
-        /// check if playr as no 
+        /// check if player has no 
         /// cards and then he lose the game;
         /// </summary>
         /// <returns></returns>

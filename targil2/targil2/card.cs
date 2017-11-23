@@ -26,27 +26,19 @@ namespace targil2
             {
                 return color;
             }
-
             set
             {
                 color = value;
             }
         }
-
         public int Number
         {
             get
             {
                 return number;
             }
-
             set
             {
-                if (value < 2 || value > 14)
-                {
-                    Console.WriteLine("ERROR");
-                    return;
-                }
                 number = value;
             }
             #endregion 
@@ -54,10 +46,10 @@ namespace targil2
         public override string ToString()
         {
             if (number < 11)
-                return "card: " + color + " " + number;
+                return  color + " " + number;
             else
             {
-            return "card: " + color + " " + (Royal)number;   
+            return  color + " " + (Royal)number;   
             }
         }
         public string cardName()
@@ -71,7 +63,6 @@ namespace targil2
                 return c.ToString();
             }
         }
-
         public int CompareTo(Card other)
         {
             return number.CompareTo(other.number);

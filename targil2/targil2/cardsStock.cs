@@ -24,7 +24,6 @@ namespace targil2
                 }
             }
         }
-
         public void mixCards()
         {
             Random rand = new Random();
@@ -36,10 +35,7 @@ namespace targil2
                 Cards[first] = Cards[second];
                 Cards[second] = tmp;
             }
-
         }
-
-
         /// <summary>
         /// return names&color of all cards;
         /// </summary>
@@ -53,7 +49,6 @@ namespace targil2
             }
             return str;
         }
-
         public void distribute(params Player[] players)
         {
             while (Cards.Count != 0)
@@ -65,24 +60,17 @@ namespace targil2
                 }
             }
         }
-
-
-        public void sortCards()
+        public void sortCards()//when do we need this??
         {
             Cards.Sort();
         }
-
-
-        public void addCard(Card card1)
+        public void addCard(Card card1)//or this?
         {
             Cards.Add(card1);
         }
-
-
-        public void removeCard(Card card1)
+        public void removeCard(Card card1)//
         {
             Cards.Remove(card1);
         }
-    }
-                    
+    }                    
 }

@@ -19,8 +19,12 @@ namespace targil2
             string name2 = Console.ReadLine();
             Game myGame = new Game(name1, name2);
             myGame.startGame();
-            myGame.makeMove();
-           
+            while (!myGame.isEndGame())
+            {
+                myGame.makeMove();
+            }
+            myGame.printWinnerName();
+            Console.ReadKey();
         }
     }
 }
