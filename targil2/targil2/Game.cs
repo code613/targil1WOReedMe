@@ -35,21 +35,21 @@ namespace targil2
                 return true;
             return false;
         }
-        public void makeMove()
+        public void makeMove(out string winner)
         {      
             Card firstCard = player1.pop();
             Card secondCard = player2.pop();
-            Console.WriteLine("player one played {0} player two played {1}", firstCard, secondCard);
+            Console.WriteLine("{0} played {1} {2} played {3}", player1.name, firstCard, player2.name, secondCard);
 
             if (firstCard.Number > secondCard.Number)
             {
                 player1.addCard(firstCard, secondCard);
-                Console.WriteLine("player one wins this round");//{0},the name
+                winner =  player1.name;
             }
             else if (secondCard.Number > firstCard.Number)
             {
                 player2.addCard(firstCard, secondCard);
-                Console.WriteLine("player two wins this round");
+                Console.WriteLine("{0} wins this round", player2.name);
             }
             else
                 warPlay(firstCard);
@@ -58,15 +58,22 @@ namespace targil2
         public void warPlay(Card cd)
         {
             Console.WriteLine("WAR WAR WAR WAR WAR");
-            Console.WriteLine("there is a WAR becouse there are 2 {0}", cd.Number);        
-            List<Card> war = new List<Card>();
+            Console.WriteLine("there is a WAR becouse there are 2 {0}", cd.Number);
+            List<Card> war;// = new List<Card>();
             war.Add(player1.pop());
             war.Add(player2.pop());
             if (player1.lose()) { return;  }
             if (player2.lose()) { return; }
             war.Add(player1.pop());
             war.Add(player2.pop());
-            makeMove();
+            makeMove(out winner);
+            if (player1.name == winner)
+            {
+                foreach(Card C in war)
+                {
+
+                }
+            }
         }
     }
 }

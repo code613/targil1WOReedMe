@@ -21,7 +21,8 @@ namespace targil2
             myGame.startGame();
             while (!myGame.isEndGame())
             {
-                myGame.makeMove();
+                myGame.makeMove(out winner);
+                Console.WriteLine("{0} wins this round", winner);
             }
             myGame.printWinnerName();
             Console.ReadKey();
