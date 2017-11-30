@@ -23,9 +23,9 @@ namespace targil2
             string str=null;
             foreach (Card C in playerCards)
             {
-                str += C;
+                str += C + ", ";
             }
-            return name + playerCards.Count + str;
+            return name + " has " + playerCards.Count + " cards : " + str;
         }
 
 

@@ -11,7 +11,7 @@ namespace targil2
     {
         static void Main(string[] args)
         {
-            CardStock cs = new CardStock();
+            //CardStock cs = new CardStock();
             Console.WriteLine("you are in war game ,the most fun game in the world.GET READY!!!!!!" );
             Console.WriteLine("enter the name of the first player");
             string name1 = Console.ReadLine();
@@ -21,8 +21,12 @@ namespace targil2
             myGame.startGame();
             while (!myGame.isEndGame())
             {
-                myGame.makeMove(out winner);
-                Console.WriteLine("{0} wins this round", winner);
+                //string winner = "";
+                if (myGame.makeMove()) //out winner));//need to declare winner (string)
+                Console.WriteLine("{0} wins this round", myGame.player1.name);
+                else{
+                    Console.WriteLine("{0} wins this round", myGame.player2.name);
+                }
             }
             myGame.printWinnerName();
             Console.ReadKey();
