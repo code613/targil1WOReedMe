@@ -10,9 +10,7 @@ namespace targil2
     {
         public string name;
         public Queue<Card> playerCards = new Queue<Card>();
-
         
-
 
         /// <summary>
         /// tostring return name ,sum of cards and what cards; 

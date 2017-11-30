@@ -35,8 +35,10 @@ namespace targil2
                 return true;
             return false;
         }
-        public bool makeMove()//out string winner)
-        {      
+        public bool makeMove()
+        {
+            Console.WriteLine(player1.ToString());
+            Console.WriteLine(player2.ToString());
             Card firstCard = player1.pop();
             Card secondCard = player2.pop();
             Console.WriteLine("{0} played {1} {2} played {3}", player1.name, firstCard, player2.name, secondCard);
@@ -44,31 +46,33 @@ namespace targil2
             if (firstCard.Number > secondCard.Number)
             {
                 player1.addCard(firstCard, secondCard);
-                return true; // winner =  player1.name;
+                return true; 
             }
             else if (secondCard.Number > firstCard.Number)
             {
                 player2.addCard(firstCard, secondCard);
-                return false;// winner = player2.name;
-                //Console.WriteLine("{0} wins this round", player2.name);
+                return false;
             }
-            else
-                return warPlay(firstCard);
+            else //case both cards are equal.
+            {
+                return warPlay(firstCard,secondCard);
+            }
+               
         }
 
-        public bool warPlay(Card cd)
+        public bool warPlay(Card cd1, Card cd2)
         {
-            //string winner;
+            
             Console.WriteLine("WAR WAR WAR WAR WAR");
-            Console.WriteLine("there is a WAR becouse there are two {0}", cd.Number);
-            List<Card> war = new List<Card>();//why dose it need to be new??? A zeevi - becouse it is only a pointer
+            Console.WriteLine("there is a WAR becouse there are two {0}", cd1.Number);
+            List<Card> war = new List<Card>();
+            war.Add(cd1);
+            war.Add(cd2);
             war.Add(player1.pop());
             war.Add(player2.pop());
-            if (player1.lose()) { return true;  }
-            if (player2.lose()) { return false; }
-            //war.Add(player1.pop());
-            //war.Add(player2.pop());
-            if (makeMove())//out winner))
+            if (player1.lose()) { return false ;  }
+            if (player2.lose()) { return true; }
+            if (makeMove())
             {
                 foreach(Card c in war)
                 {
