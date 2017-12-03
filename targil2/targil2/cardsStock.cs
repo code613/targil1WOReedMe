@@ -10,6 +10,9 @@ namespace targil2
     public class CardStock
     {
         public List<Card> Cards = new List<Card>();
+        /// <summary>
+        /// put 26 cards intu Cards from 2-14 un both colors.
+        /// </summary>
         public CardStock()
         {
             for (int i = 0; i < 26; i++)
@@ -24,6 +27,9 @@ namespace targil2
                 }
             }
         }
+        /// <summary>
+        /// randomaly mix the cards.
+        /// </summary>
         public void mixCards()
         {
             Random rand = new Random();
@@ -49,6 +55,10 @@ namespace targil2
             }
             return str;
         }
+        /// <summary>
+        /// Divides the cards evenly between all players.
+        /// </summary>
+        /// <param name="players"></param>
         public void distribute(params Player[] players)
         {
             while (Cards.Count != 0)
@@ -60,15 +70,26 @@ namespace targil2
                 }
             }
         }
-        public void sortCards()//when do we need this??
+        /// <summary>
+        /// will sort cards from low to high.
+        /// </summary>
+        public void sortCards()
         {
             Cards.Sort();
         }
-        public void addCard(Card card1)//or this?
+        /// <summary>
+        /// add card to stack.
+        /// </summary>
+        /// <param name="card1"></param>
+        public void addCard(Card card1)
         {
             Cards.Add(card1);
         }
-        public void removeCard(Card card1)//
+        /// <summary>
+        /// remove card from stack.
+        /// </summary>
+        /// <param name="card1"></param>
+        public void removeCard(Card card1)
         {
             Cards.Remove(card1);
         }

@@ -19,7 +19,7 @@ namespace targil2
             color = col;
             number = num; 
         }
-        #region
+        #region properties
         internal E_Color Color
         {
             get
@@ -63,6 +63,11 @@ namespace targil2
                 return c.ToString();
             }
         }
+        /// <summary>
+        /// will compare two cards acorrding to theyr number.
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
         public int CompareTo(Card other)
         {
             return number.CompareTo(other.number);

@@ -27,7 +27,7 @@ namespace targil2
                 else
                     Console.WriteLine("{0} wins this round", myGame.player2.name);
             }
-            Console.WriteLine(myGame.printWinnerName()); 
+            Console.WriteLine(myGame.printWinnerName());
             Console.ReadKey();
         }
     }

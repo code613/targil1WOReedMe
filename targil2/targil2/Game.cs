@@ -21,7 +21,10 @@ namespace targil2
             gameCards.mixCards();
             gameCards.distribute(player1, player2);
         }
-
+        /// <summary>
+        /// if one of the players print the seconds name.
+        /// </summary>
+        /// <returns></returns>
         public string printWinnerName()
         {
             if (player1.lose())
@@ -29,12 +32,17 @@ namespace targil2
             return player1.name + " is the great winner";
 
         }
+
         public bool isEndGame()
         {
             if (player1.lose() || player2.lose())
                 return true;
             return false;
         }
+        /// <summary>
+        /// compare both players first cards.
+        /// </summary>
+        /// <returns></returns>
         public bool makeMove()
         {
             Console.WriteLine(player1.ToString());
@@ -70,9 +78,9 @@ namespace targil2
             war.Add(cd2);
             war.Add(player1.pop());
             war.Add(player2.pop());
-            if (player1.lose()) { return false ;  }
+            if (player1.lose()) { return false ;  }//case he dosent have enough cards for war.
             if (player2.lose()) { return true; }
-            if (makeMove())
+            if (makeMove())//case player 1 wins the war
             {
                 foreach(Card c in war)
                 {
@@ -80,7 +88,7 @@ namespace targil2
                 }
                 return true;
             }
-            else
+            else     //case player 2 wins the war
             {
                 foreach (Card c in war)
                 {
